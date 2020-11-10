@@ -91,6 +91,9 @@ namespace WebApplication2
             // Add Support for to QueryString parameters transformation:
             var queryString = $"?q={context.SearchQuery}";
 
+            // This will generate the following (encoded) value:
+            // e.g. "Germany/Smartphone%3Fq%3Ddual%20sim"
+            // Should be: "Germany/Smartphone?q=dual%20sim"
             return string.Concat(path, queryString);
         }
     }
